@@ -15,10 +15,12 @@ public class AdminServiceImpl implements AdminService{
         this.adminMapper = adminMapper;
     }
 
+    @Override
     public Integer insertAdmin(Admin admin){
         return adminMapper.insertAdmin(admin);
     }
 
+    @Override
     public List<Admin> getAdmin(){
         return adminMapper.getAdmin();
     }

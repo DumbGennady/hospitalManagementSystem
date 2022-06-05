@@ -6,6 +6,9 @@ import com.aaket.hospitalmanagementsystem.mapper.DoctorMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.print.Doc;
+import java.util.List;
+
 @Service
 public class DoctorServiceImpl implements DoctorService{
 
@@ -19,4 +22,10 @@ public class DoctorServiceImpl implements DoctorService{
     public Integer insertDoctor(Doctor doctor){
         return doctorMapper.insertDoctor(doctor);
     }
+
+    @Override
+    public List<Doctor> getDoctor(){
+        return doctorMapper.getDoctor();
+    }
+
 }

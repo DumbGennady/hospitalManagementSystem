@@ -3,18 +3,47 @@
 <mapper namespace="com.aaket.hospitalmanagementsystem.mapper.DoctorMapper">
 
     <insert id="insertDoctor">
-        insert into hospital_doctor
+        insert into doctor
         (
         name,
-        branch,
-        exp_year
+        username,
+        email,
+        mobile,
+        age,
+        exp_year,
+        specialisation,
+        qualification,
+        aadhar_no,
+        password
         )
         values
         (
         #{doctor.name},
-        #{doctor.branch},
-        #{doctor.expYear}
+        #{doctor.username},
+        #{doctor.email},
+        #{doctor.mobile},
+        #{doctor.age},
+        #{doctor.expYear},
+        #{doctor.specialisation},
+        #{doctor.qualification},
+        #{doctor.aadharNo},
+        #{doctor.password}
         )
     </insert>
+
+    <select id="getDoctor" resultType="com.aaket.hospitalmanagementsystem.entity.Doctor">
+        select
+        name,
+        username,
+        email,
+        mobile,
+        age,
+        exp_year,
+        specialisation,
+        qualification,
+        aadhar_no
+        from doctor
+        where 1 = 1
+    </select>
 
 </mapper>
