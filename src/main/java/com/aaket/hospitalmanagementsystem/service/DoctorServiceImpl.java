@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DoctorServiceImpl {
+public class DoctorServiceImpl implements DoctorService{
 
     DoctorMapper doctorMapper;
     @Autowired
@@ -15,6 +15,7 @@ public class DoctorServiceImpl {
         this.doctorMapper = doctorMapper;
     }
 
+    @Override
     public Integer insertDoctor(Doctor doctor){
         return doctorMapper.insertDoctor(doctor);
     }
