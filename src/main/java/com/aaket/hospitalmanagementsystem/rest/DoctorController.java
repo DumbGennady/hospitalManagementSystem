@@ -23,7 +23,7 @@ public class DoctorController {
         return doctorService.insertDoctor(doctor);
     }
 
-    @GetMapping("/get")
+    @GetMapping("/list")
     List<Doctor>  getDoctor (){
         return doctorService.getDoctor();
     }

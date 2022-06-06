@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rest/admin")
+@CrossOrigin("http://localhost:8080/")
 public class AdminController {
 
     AdminServiceImpl adminService;

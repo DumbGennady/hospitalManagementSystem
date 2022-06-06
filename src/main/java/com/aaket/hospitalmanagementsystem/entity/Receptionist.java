@@ -3,10 +3,11 @@ package com.aaket.hospitalmanagementsystem.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Date;
+
 @Data
 @EqualsAndHashCode(callSuper=true)
-public class Doctor extends Receptionist{
-    Integer expYear;
-    String specialisation;
-    String qualification;
+public class Receptionist extends Admin{
+    Integer age;  //Change age to dob
+    String aadharNo;
 }

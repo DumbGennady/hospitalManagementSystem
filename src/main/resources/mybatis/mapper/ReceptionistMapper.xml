@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaket.hospitalmanagementsystem.mapper.ReceptionistMapper">
+
+    <insert id="insertReceptionist">
+        insert into receptionist
+        (
+        name,
+        username,
+        email,
+        mobile,
+        age,
+        aadhar_no,
+        password
+        )
+        values
+        (
+        #{receptionist.name},
+        #{receptionist.username},
+        #{receptionist.email},
+        #{receptionist.mobile},
+        #{receptionist.age},
+        #{receptionist.aadharNo},
+        #{receptionist.password}
+        )
+    </insert>
+
+    <select id="getReceptionist" resultType="com.aaket.hospitalmanagementsystem.entity.Receptionist">
+        select
+        name,
+        username,
+        email,
+        mobile,
+        age,
+        aadhar_no
+        from receptionist
+        where 1 = 1
+    </select>
+
+</mapper>
