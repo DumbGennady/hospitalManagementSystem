@@ -9,5 +9,5 @@ public interface AppointmentService {
 
     Integer insertAppointment(Appointment appointment);
 
-    List<Appointment> getAppointment(Integer patientId, Integer doctorId, Integer AppointmentId, Date date);
+    List<Appointment> getAppointment(Integer patientId, String patientName, Integer doctorId, Integer AppointmentId, Date date);
 }

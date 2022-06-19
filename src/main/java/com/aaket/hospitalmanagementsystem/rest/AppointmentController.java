@@ -25,8 +25,8 @@ public class AppointmentController {
     }
 
     @GetMapping("/list")
-    List<Appointment> getAppointment(@RequestParam(value="patientId", required = false) Integer patientId, @RequestParam(value="doctorId", required = false) Integer doctorId, @RequestParam(value="appointmentId", required = false) Integer appointmentId, @RequestParam(value="date", required = false)Date date){
-        return appointmentService.getAppointment(patientId, doctorId, appointmentId, date);
+    List<Appointment> getAppointment(@RequestParam(value="patientId", required = false) Integer patientId, @RequestParam(value="patientName", required = false) String patientName, @RequestParam(value="doctorId", required = false) Integer doctorId, @RequestParam(value="appointmentId", required = false) Integer appointmentId, @RequestParam(value="date", required = false)Date date){
+        return appointmentService.getAppointment(patientId, patientName, doctorId, appointmentId, date);
     }
 
 }

@@ -2,7 +2,6 @@ package com.aaket.hospitalmanagementsystem.service;
 
 import com.aaket.hospitalmanagementsystem.entity.Appointment;
 import com.aaket.hospitalmanagementsystem.mapper.AppointmentMapper;
-import com.aaket.hospitalmanagementsystem.mapper.PatientMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public List<Appointment> getAppointment(Integer patientId, Integer doctorId,Integer appointmentId, Date date){
-        return appointmentMapper.getAppointment(patientId, doctorId, appointmentId, date);
+    public List<Appointment> getAppointment(Integer patientId, String patientName, Integer doctorId,Integer appointmentId, Date date){
+        return appointmentMapper.getAppointment(patientId, patientName, doctorId, appointmentId, date);
     }
 }

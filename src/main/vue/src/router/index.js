@@ -20,11 +20,19 @@ import AdminLogin from "../components/AdminLogin.vue"
 import DoctorLogin from "../components/DoctorLogin.vue"
 import ReceptionistLogin from "../components/ReceptionistLogin.vue"
 
+//Search
+import AppointmentSearch from "../components/AppointmentSearch.vue"
+
 const routes=[
     {
         name: 'HomePage',
         path: '/',
         component: HomePage
+    },
+    {
+        name: 'RegisterPage',
+        path: '/register',
+        component: RegisterPage
     },
     {
         name: 'AdminRegister',
@@ -72,6 +80,11 @@ const routes=[
         component: ReceptionistLogin
     },
     {
+        name: 'AppointmentSearch',
+        path: '/search/appointment',
+        component: AppointmentSearch
+    },
+    {
         name: 'AboutUs',
         path: '/about',
         component: AboutUs
@@ -80,12 +93,7 @@ const routes=[
         name: 'DevContact',
         path: '/dev-contact',
         component: DevContact
-    },
-    {
-        name: 'RegisterPage',
-        path: '/register',
-        component: RegisterPage
-    },
+    }
 
 ]
 

@@ -15,7 +15,13 @@ import java.sql.Time;
 public class Appointment {
     Integer id;
     Integer patientId;
+    String patientName;
+    Date patientDob;
+    String patientBloodGroup;
+    String patientMobile;
     Integer doctorId;
+    String doctorName;
+    String doctorSpecialisation;
     Date date;
     Time startTime;
     Time endTime;

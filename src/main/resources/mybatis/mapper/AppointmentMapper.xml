@@ -25,23 +25,38 @@
 
     <select id="getAppointment" resultType="com.aaket.hospitalmanagementsystem.entity.Appointment">
         select
-        id,
+        appointment.id,
         patient_id,
+        patient.name as patient_name,
+        patient.dob as patient_dob,
+        patient.blood_group as patient_blood_group,
+        patient.mobile as patient_mobile,
         doctor_id,
+        doctor.name as doctor_name,
+        doctor.specialisation as doctor_specialisation,
         date,
         start_time,
         end_time,
-        description
+        description,
+        appointment.crt_dtm,
+        appointment.crt_usr
         from appointment
+        inner join patient
+        on appointment.patient_id = patient.id
+        inner join doctor
+        on appointment.doctor_id = doctor.id
         where 1 = 1
         <if test="patientId != null and patientId != '' ">
             AND patient_id = #{patientId}
+        </if>
+        <if test="patientName != null and patientName != '' ">
+            AND patient.name like '%' #{patientName} '%'
         </if>
         <if test="doctorId != null and doctorId != '' ">
             AND doctor_id = #{doctorId}
         </if>
         <if test="appointmentId != null and appointmentId != '' ">
-            AND id = #{appointmentId}
+            AND appointment.id = #{appointmentId}
         </if>
         <if test="date != null">
             AND date = #{date}

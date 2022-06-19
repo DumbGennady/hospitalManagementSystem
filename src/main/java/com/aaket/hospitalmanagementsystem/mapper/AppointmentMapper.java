@@ -12,5 +12,5 @@ public interface AppointmentMapper {
 
     Integer insertAppointment(@Param("appointment") Appointment appointment);
 
-    List<Appointment> getAppointment(@Param("patientId") Integer patientId, @Param("doctorId") Integer doctorId, @Param("appointmentId") Integer appointmentId, @Param("date") Date date);
+    List<Appointment> getAppointment(@Param("patientId") Integer patientId, @Param("patientName") String patientName, @Param("doctorId") Integer doctorId, @Param("appointmentId") Integer appointmentId, @Param("date") Date date);
 }
