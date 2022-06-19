@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-      <h1> Register Admin </h1>
+      <h1> Register Receptionist </h1>
       <div class="form">
           <div>
             <label for="name">Name:</label>
@@ -27,13 +27,13 @@
             <input type="password" v-model="confirmPassword" id="confirmPassword" placeholder="Confirm password"/>
           </div>
       </div>
-      <button @click="registerAdmin"> Register </button>
+      <button @click="registerReceptionist"> Register </button>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'AdminRegister',
+    name: 'ReceptionistRegister',
     data() {
         return {
             name: '',
@@ -56,9 +56,9 @@ export default {
             }
             return true;
         },
-        registerAdmin(){
+        registerReceptionist(){
             if(this.validateInput()){
-                this.axios.post("http://localhost:9090/rest/admin/insert",
+                this.axios.post("http://localhost:9090/rest/receptionist/insert",
                 {
                     "name": this.name,
                     "username": this.username,
@@ -67,8 +67,8 @@ export default {
                     "password": this.password
                 }
                 ).then((res) => {
-                    // if(res.data !== 1)this.$notify("Item cannot be added")
-                    if(res.data === 1)alert("Admin successfully registered");
+                    if(res.data === 1)alert("Receptionist successfully registered");
+                    else alert("Unable to register the receptionist")
                     console.log(res);
                 }
             )}

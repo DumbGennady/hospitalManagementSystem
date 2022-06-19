@@ -13,13 +13,46 @@
           <input type="password" v-model="password" id="password" placeholder="Enter password"/>
         </div>
     </div>
-    <button @click="LoginAdmin"> Login </button>
+    <button @click="Login"> Login </button>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'AdminLogin'
+    name: 'AdminLogin',
+    data() {
+      return{
+        password : '',
+        username : '',
+      }
+    },
+    methods: {
+      Login(){
+        if(this.validateInput()){
+                this.axios.get("http://localhost:9090/rest/admin/login",
+                {
+                  params: {
+                    username: this.username,
+                    password: this.password,
+                    userType: "admin"
+                  }
+                }
+                ).then((res) => {
+                    if(res.data !== 1)this.$notify("Username/password does not match")
+                    if(res.data === 1)alert("Login successful");
+                    console.log(res);
+                }
+        )}
+      },
+      
+      validateInput(){
+        if(this.password === '' || this.username === ''){
+          alert("Please enter username/password")
+          return false;
+        }
+        return true;
+      }
+    }
 }
 </script>
 

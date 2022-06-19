@@ -33,6 +33,7 @@
 
     <select id="getDoctor" resultType="com.aaket.hospitalmanagementsystem.entity.Doctor">
         select
+        id,
         name,
         username,
         email,

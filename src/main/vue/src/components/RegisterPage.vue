@@ -5,13 +5,19 @@
       </div>
       <div class = "login-container">
           <div class="login-item">
+            <router-link to = "/admin-register">
             Admin Register
+            </router-link>
           </div>
           <div class="login-item">
+            <router-link to = "/register/doctor">
             Doctor Register
+            </router-link>
           </div>
           <div class="login-item">
+            <router-link to = "/register/receptionist">
             Receptionist Register
+            </router-link>
           </div>
       </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-      <h1> Register Admin </h1>
+      <h1> Register Doctor </h1>
       <div class="form">
           <div>
             <label for="name">Name:</label>
@@ -19,6 +19,10 @@
             <input type="text" v-model="phone" id="phone" placeholder="Enter phone no"/>
           </div>
           <div>
+            <label for="specialisation">Username:</label>
+            <input type="text" v-model="specialisation" id="specialisation" placeholder="Enter doctor specialisation"/>
+          </div>
+          <div>
             <label for="password">Password:</label>
             <input type="password" v-model="password" id="password" placeholder="Enter password"/>
           </div>
@@ -33,13 +37,14 @@
 
 <script>
 export default {
-    name: 'AdminRegister',
+    name: 'DoctorRegister',
     data() {
         return {
             name: '',
             username: '',
             email: '',
             phone: '',
+            specialisation: '',
             password: '',
             confirmPassword: ''
         }
@@ -58,17 +63,18 @@ export default {
         },
         registerAdmin(){
             if(this.validateInput()){
-                this.axios.post("http://localhost:9090/rest/admin/insert",
+                this.axios.post("http://localhost:9090/rest/doctor/insert",
                 {
                     "name": this.name,
                     "username": this.username,
                     "email": this.email,
                     "mobile": this.phone,
+                    "specialisation": this.specialisation,
                     "password": this.password
                 }
                 ).then((res) => {
-                    // if(res.data !== 1)this.$notify("Item cannot be added")
-                    if(res.data === 1)alert("Admin successfully registered");
+                    if(res.data !== 1)alert("Doctor cannot be added")
+                    if(res.data === 1)alert("Doctor successfully registered");
                     console.log(res);
                 }
             )}

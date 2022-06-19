@@ -1,7 +1,7 @@
 package com.aaket.hospitalmanagementsystem.rest;
 
 import com.aaket.hospitalmanagementsystem.entity.Admin;
-import com.aaket.hospitalmanagementsystem.service.AdminService;
+import com.aaket.hospitalmanagementsystem.entity.Login;
 import com.aaket.hospitalmanagementsystem.service.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +27,10 @@ public class AdminController {
     @GetMapping("/list")
     List<Admin> getAdmin(){
         return adminService.getAdmin();
+    }
+
+    @GetMapping("/login")
+    Integer isValid(@RequestBody Login login){
+        return adminService.isValid(login);
     }
 }

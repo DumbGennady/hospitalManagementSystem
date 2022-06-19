@@ -3,7 +3,11 @@ package com.aaket.hospitalmanagementsystem.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.Date;
+/**
+ * @author: DumbGennady
+ * @date: 2022/11/06
+ * @description: Receptionist entity class
+ */
 
 @Data
 @EqualsAndHashCode(callSuper=true)

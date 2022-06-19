@@ -1,6 +1,7 @@
 package com.aaket.hospitalmanagementsystem.service;
 
 import com.aaket.hospitalmanagementsystem.entity.Admin;
+import com.aaket.hospitalmanagementsystem.entity.Login;
 import com.aaket.hospitalmanagementsystem.mapper.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,10 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public List<Admin> getAdmin(){
         return adminMapper.getAdmin();
+    }
+
+    @Override
+    public Integer isValid(Login login){
+        return adminMapper.isValid(login);
     }
 }

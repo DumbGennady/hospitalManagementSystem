@@ -27,4 +27,5 @@ public class DoctorController {
     List<Doctor>  getDoctor (){
         return doctorService.getDoctor();
     }
+
 }
